@@ -1,5 +1,6 @@
 package HW1a;
 
+import HW8.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,15 +9,20 @@ public class Task1Test {
     @Test
     public void HW8aTEST(){
 
-        Company company = new Company();
+        Manager manager = new Manager("Phillip", 2000, 10);
+        Director director = new Director("Tony", 5000, 5);
+        BaseManager[] people = {manager, director};
 
-        Employee[] employees1 = {new Employee("Van", 6969)};
+        int maxSalary =  EmployeeUtils.maxManagersSalary(people);
+        Assert.assertEquals(maxSalary, 2250);
 
-        String str = "" + company.findName("Van", employees1);
+        Boolean findName  = EmployeeUtils.findName("Alexander", people);
+        Assert.assertFalse(findName);
+        Boolean findSubName = EmployeeUtils.findSubName("Phill", people);
+        Assert.assertTrue(findSubName);
 
-        Assert.assertEquals(str, "1");
-
-
+        int minSubordinates = EmployeeUtils.minNumberOfSubordinates(people);
+        Assert.assertEquals(minSubordinates, 5);
 
     }
 }

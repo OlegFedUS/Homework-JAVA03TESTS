@@ -1,6 +1,6 @@
-package HW1a;
+package HW8;
 
-public class BaseManager extends Worker {
+public class BaseManager extends Worker{
 
     private int numberOfSubordinates;
 
@@ -9,14 +9,14 @@ public class BaseManager extends Worker {
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
-    public int getNumberOfSubordinates(){
+    public int getNumberOfSubordinates() {
         return numberOfSubordinates;
     }
 
-    public void setNumberOfSubordinates(int numberOfSubordinates){
+    public void setNumberOfSubordinates(int numberOfSubordinates) {
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
 
-}
 
+}
